@@ -10,8 +10,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@title='Sign Up']")
     public WebElement signupButton;
 
-    @FindBy(xpath = "//div[@id='username']/button/span")
-    public WebElement loggedInUsername;
+//    @FindBy(xpath = "//div[@id='username']/button/span")
+//    public WebElement loggedInUsername;
     @FindBy(xpath = "//span[.='Nancy']")
     public WebElement userName;
     @FindBy(xpath = "//a[.='Sign In']")
