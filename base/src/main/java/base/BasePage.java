@@ -78,7 +78,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://promotions.bankofamerica.com/consumer/multiproduct?cm_mmc=ENT-Consumer-_-MSN-PS-_-bank_of_america-_-Brand_CoreBrand&amp;cq_src=bing_ads&amp;cq_cmp=50831638&amp;cq_term=bank%20of%20america&amp;cq_net=o&amp;cq_plt=bp&amp;gclid=1526481aa78314de864f2c87594b8fc9&amp;gclsrc=3p.ds&amp;msclkid=1526481aa78314de864f2c87594b8fc9") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
