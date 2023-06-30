@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Homepage {
+import base.BasePage;
+
+public class Homepage extends BasePage {
 }
