@@ -1,6 +1,6 @@
 package Test_app_freecrm;
 
-import HomePage.Homepage;
+import homepage.Homepage;
 import LoginPage.DashboardPage;
 import LoginPage.LoginPage;
 import base.BasePage;

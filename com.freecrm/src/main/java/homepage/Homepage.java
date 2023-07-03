@@ -1,4 +1,4 @@
-package HomePage;
+package homepage;
 
 import LoginPage.LoginPage;
 import base.BasePage;

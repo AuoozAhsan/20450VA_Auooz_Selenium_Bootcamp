@@ -1,12 +1,9 @@
-package HomePage;
+package homepage;
 
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.By;
-import org.testng.Assert;
-import utils.Database;
 
 public class espnHomePage extends BasePage {
     public espnHomePage() {
