@@ -12,63 +12,24 @@ import utils.ExcelData;
 import javax.swing.*;
 import java.io.File;
 public class testSignIn extends BasePage {
-    @Test(priority = 1, groups = "smoke")
-
-    public void testDoSignIn() {
-
+    @Test(priority= 2, groups= {"BAT"},dataProvider = "signindataprovider")
+    public void testUserSignIn(String email,String password){
+        signInPage signInPage = new signInPage();
         HomePage homePage = new HomePage();
-
         homePage.clickOnSignInLink();
 
-        ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
-        signInPage signInPage = new signInPage();
-        String[][] credentials = excelData.readStringArrays("doSignIn");
-        String email = credentials[0][0];
-        String password = credentials[0][1];
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
-        signInPage.doSignIn(email, password);
-
-
-        Assert.assertTrue(isElementVisible(homePage.userName));
+        signInPage.doSignIn(email,password);
+        Assert.assertTrue(checkElementPresent(homePage.loggedInUsername));
     }
 
-    @DataProvider (name="signupdataprovider")
-    public Object[][] testSignupUserDataProvider()
+    @DataProvider(name="signindataprovider")
+    public Object[][] testSignInUserDataProvider()
     {
 
-        String path= System.getProperty("user.dir")+"\\resources\\test_data.xlsx";
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
         ExcelData ex=new ExcelData(path);
-        String data[][]=ex.readStringArrays("doSignIn");
+        String data[][]=ex.readStringArrays("Signin_apartments");
         return data;
 
     }
-
-
-
-    @Test(priority = 1, groups = "smoke", dataProvider ="testDoSignIn")
-
-    public void testDoSignIn(String email, String password) {
-
-        HomePage homePage = new HomePage();
-        homePage.clickOnSignInLink();
-
-        //ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
-        signInPage signInPage = new signInPage();
-
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
-        signInPage.doSignIn(email, password);
-
-
-        Assert.assertTrue(isElementVisible(homePage.userName));
-    }
-
-    @DataProvider(name = "testDoSignIn")
-    public Object[][] getDoSigInDataProvider(){
-        String path= System.getProperty("user.dir")+ File.separator+ "resources" + File.separator + "test_data.xlsx";;
-
-        ExcelData excelData = new ExcelData(path);
-        return excelData.readStringArrays("doSignIn");
-
-    }
-
 }

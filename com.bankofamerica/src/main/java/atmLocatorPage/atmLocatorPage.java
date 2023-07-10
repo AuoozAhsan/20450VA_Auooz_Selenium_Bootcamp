@@ -16,7 +16,7 @@ public class atmLocatorPage extends BasePage {
     public WebElement searchButton;
 
     @FindBy(xpath = "//div[@id='aria-map-list-header']")
-    public WebElement resultForATM;
+    public static WebElement resultForATM;
 
     public void enterZipOnSearchBar(String zip){
         sendKeysToElement(searchBar, zip);
@@ -24,7 +24,7 @@ public class atmLocatorPage extends BasePage {
     public void clickOnSearchButton(){
         safeClickOnElement(searchButton);
     }
-    public void searchForAtm(String zip){
+    public static void searchForAtm(String zip){
         enterZipOnSearchBar(zip);
         clickOnSearchButton();
     }
