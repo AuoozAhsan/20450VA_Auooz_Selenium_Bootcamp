@@ -9,10 +9,18 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://freecrm.com"/>
 
-    <test name = "BAT">
-    <classes>
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="Test_app_freecrm.TestAuthentication"/>
+            <class name="Test_app_freecrm.TestCreateContact"/>
+            <class name="Test_app_freecrm.TestCreateTasks"/>
+            <class name="Test_app_freecrm.TestSql"/>
 
-        <class name="Test_app_freecrm.TestCreateContact"/>
-    </classes>
-</test>
+        </classes>
+    </test>
 </suite>

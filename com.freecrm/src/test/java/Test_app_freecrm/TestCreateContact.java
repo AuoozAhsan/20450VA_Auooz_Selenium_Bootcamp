@@ -1,8 +1,9 @@
 package Test_app_freecrm;
 
+import createContactPage.ContactAddedPage;
 import homepage.Homepage;
-import LoginPage.DashboardPage;
-import LoginPage.LoginPage;
+import loginpage.DashboardPage;
+import loginpage.LoginPage;
 import base.BasePage;
 import createContactPage.CreateContactPage;
 import org.testng.Assert;
@@ -12,47 +13,31 @@ import utils.ExcelData;
 
 public class TestCreateContact extends BasePage {
 
-    @Test(priority= 1, groups= {"BAT"},dataProvider = "logindataprovider")
+    @Test(priority= 2, groups= {"BAT"},dataProvider = "createContactDataProvider")
+    public void testDoAddNewContact(String firstName, String lastName,String companyName,String email,
+                                    String description, String streetAddress,  String city, String state,String phoneNumber){
 
-    public void testLogin(String email,String pass){
-        Homepage homePage = new Homepage();
-        LoginPage loginPage = new LoginPage();
-        DashboardPage dashboardPage = new DashboardPage();
 
+        Homepage homePage =new Homepage();
+
+        LoginPage loginPage= new LoginPage();
         homePage.clickOnLoginButton();
+        String email1 = "sadouni.dalal@gmail.com";
+        String password="AydenLiam1213";
+        DashboardPage dashboardUserPage= loginPage.doSignIn(email1,password);
+        CreateContactPage createNewContactPage= dashboardUserPage.doClickAddButton();
 
-        loginPage.doLogin(email, pass);
+        ContactAddedPage contactsAddedPage= createNewContactPage.doAddContact(firstName,lastName,companyName,email,description,streetAddress,city,state,phoneNumber);
 
-        Assert.assertTrue(isElementVisible(dashboardPage.userName));
+        Assert.assertTrue(isElementVisible(contactsAddedPage.redIcon));
 
     }
-    @DataProvider(name="logindataprovider")
-    public String[][] loginDataProvider()
-    {
+    @DataProvider(name="createContactDataProvider")
+    public Object [][] addContactDataProvider() {
 
-        String path= System.getProperty("user.dir")+"\resources\test_data.xlsx";
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
         ExcelData ex=new ExcelData(path);
-        String data[][]=ex.readStringArrays("login_crm");
-        return data;
-
-    }
-    @Test(priority= 1, groups= {"BAT"},dataProvider = "createcontactdataprovider")
-
-    public void testCreateContact(String firstName,String lastName,String middleName, String companyName, String tagName,
-                                  String emailAddress,String description, String timeZone, String streetAddress, String city, String state, String zip){
-        CreateContactPage createContactPage = new CreateContactPage();
-        createContactPage.createNewContact(firstName, lastName, middleName, companyName, tagName, emailAddress, description, timeZone, streetAddress, city, state, zip);
-
-        //Assert.assertTrue(isElementVisible(dashboardPage.nameHeader));
-
-    }
-    @DataProvider(name="createcontactdataprovider")
-    public String[][] createcontactDataProvider()
-    {
-
-        String path= System.getProperty("user.dir")+"\\resources\\createContactPage.xlsx";
-        ExcelData ex=new ExcelData(path);
-        String data[][]=ex.readStringArrays("createContactPage");
+        String data[][]=ex.readStringArrays("createContact_crm1");
         return data;
 
     }

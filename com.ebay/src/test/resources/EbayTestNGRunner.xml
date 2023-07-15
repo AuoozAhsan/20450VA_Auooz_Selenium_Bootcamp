@@ -9,4 +9,18 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://ebay.com"/>
 
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="Test_app_ebay.testAddToCart"/>
+            <class name="Test_app_ebay.testLogin"/>
+            <class name="Test_app_ebay.testSearch"/>
+
+        </classes>
+    </test>
+
 </suite>

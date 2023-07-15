@@ -9,4 +9,21 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://expedia.com"/>
 
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="Test_app_expedia.TestAuthentication"/>
+            <class name="Test_app_expedia.TestChangeLanguage"/>
+            <class name="Test_app_expedia.TestSearchFlight"/>
+            <class name="Test_app_expedia.TestSearchStays"/>
+            <class name="Test_app_expedia.TestSubmitFeedback"/>
+            <class name="Test_app_expedia.TestSupport"/>
+
+        </classes>
+    </test>
+
 </suite>

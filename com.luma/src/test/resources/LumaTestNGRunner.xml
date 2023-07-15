@@ -9,4 +9,22 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://magento.softwaretestingboard.com/"/>
 
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="Test_app_luma.TestAuthentication"/>
+            <class name="Test_app_luma.TestContactUs"/>
+            <class name="Test_app_luma.TestCreateAccount"/>
+            <class name="Test_app_luma.TestFilterTheResult"/>
+            <class name="Test_app_luma.TestSearch"/>
+            <class name="Test_app_luma.TestShoppingCart"/>
+            <class name="Test_app_luma.TestSubscribe"/>
+
+        </classes>
+    </test>
+
 </suite>

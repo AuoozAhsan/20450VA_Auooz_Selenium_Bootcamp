@@ -9,4 +9,19 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://booking.com"/>
 
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="Test_app_booking.TestRegistration"/>
+            <class name="Test_app_booking.TestSearchFlight"/>
+            <class name="Test_app_booking.TestSearchHotel"/>
+            <class name="Test_app_booking.TestSwitchLanguage"/>
+
+        </classes>
+    </test>
+
 </suite>
