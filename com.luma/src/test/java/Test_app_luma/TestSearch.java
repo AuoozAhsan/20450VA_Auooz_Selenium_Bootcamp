@@ -9,11 +9,6 @@ import resultpage.SearchResultPage;
 import utils.ExcelData;
 
 public class TestSearch extends BasePage {
-    //Test Case: As a user, I should be able to search items on the web application.
-//    Navigate to URL
-//    Enter a search term in the search bar
-//    Click on the search icon button
-//    Verify that the search results are relevant to the entered term
 
 
 

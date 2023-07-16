@@ -24,7 +24,7 @@ public class atmLocatorPage extends BasePage {
     public void clickOnSearchButton(){
         safeClickOnElement(searchButton);
     }
-    public static void searchForAtm(String zip){
+    public void searchForAtm(String zip){
         enterZipOnSearchBar(zip);
         clickOnSearchButton();
     }

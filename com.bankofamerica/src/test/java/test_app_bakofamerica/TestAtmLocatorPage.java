@@ -19,7 +19,7 @@ public class TestAtmLocatorPage extends BasePage {
         atmLocatorPage atmlocatorpage = new atmLocatorPage();
 
         bankOfAmericaPage.clickOnAtmButton();
-        atmLocatorPage.searchForAtm(zip);
+        atmlocatorpage.searchForAtm(zip);
         Assert.assertTrue(isElementVisible(atmLocatorPage.resultForATM));
     }
 

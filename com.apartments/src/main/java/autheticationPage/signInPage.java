@@ -19,6 +19,7 @@ public class signInPage extends BasePage {
         PageFactory.initElements(driver,this);
     }
 
+
     public void enterEmailAddress(String email){
         sendKeysToElement(emailAddressInput,email);
     }

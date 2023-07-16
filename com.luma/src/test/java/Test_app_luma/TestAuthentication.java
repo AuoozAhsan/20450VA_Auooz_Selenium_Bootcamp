@@ -9,13 +9,6 @@ import org.testng.annotations.Test;
 import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
-    //    Test Case : Login with valid credentials
-//    Navigate to URL	https://magento.softwaretestingboard.com/
-//    Click ‘Sign In’ Link
-//    Enter valid email in email field input
-//    Enter valid password int the password field input
-//    Click on Login Button
-//    Verify that a welcome message with the user’s name is displayed
 
 
     @Test(priority = 2, groups = {"BAT"},dataProvider = "signInDataProvider")

@@ -9,17 +9,7 @@ import utils.ExcelData;
 import utils.GenerateData;
 
 public class TestCreateAccount extends BasePage {
-       /* Test Case: Tes registration
-1.Click ‘Create an Account’ button
-2.Enter first name (‘Personal Information’ section)
-3.Enter last name (‘Personal Information’ section)
-4.Enter valid email address (‘Sign-in Information’ section)
-5.Enter valid password that conforms to password requirements (‘Sign-in Information’ section)
-6.Confirm password (‘Sign-in Information’ section)
-7.Click ‘Create an Account’ button
-8.Validate user is logged in and navigated to My Account page
 
-     */
 
     @Test(priority = 4, groups= {"BAT"}, dataProvider = "registrationDataProvider")
     public void testRegistration(String firstName, String lastName, String emailAddress,String password){
